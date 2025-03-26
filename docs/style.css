@@ -1,0 +1,34 @@
+.top-left {
+    background: rgba(130, 215, 255, 0.7);
+    border-top-left-radius: 100px;
+  }
+  
+  .top-right {
+    background: rgba(255, 130, 165, 0.7);
+    border-top-right-radius: 100px;
+  }
+  
+  .bottom-right {
+    background: rgba(130, 255, 144, 0.7);
+    border-bottom-right-radius: 100px;
+  }
+  
+  .bottom-left {
+    background: rgba(255, 144, 130, 0.7);
+    border-bottom-left-radius: 100px;
+  }
+  
+  .top-left, .top-right, .bottom-right, .bottom-left {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+  }
+  
+  .top-right, .bottom-right {
+    left: -5px;
+  }
+  
+  .bottom-right, .bottom-left {
+    top: -7px;
+  }
