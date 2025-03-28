@@ -38,7 +38,7 @@ jobs:
           ###### End of Repository/Build Configurations ######
           production_branch: "main"
       - name: URL
-        id: displaying URL
+        id: displaying_URL
         run: echo ${{ vars.static_web_app_url }}
   
   close_pull_request_job:
