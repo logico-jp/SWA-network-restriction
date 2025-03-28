@@ -37,6 +37,9 @@ jobs:
           output_location: "." # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
           production_branch: "main"
+      - name: URL
+        id: displaying URL
+        run: echo ${{ vars.static_web_app_url }}
   
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
