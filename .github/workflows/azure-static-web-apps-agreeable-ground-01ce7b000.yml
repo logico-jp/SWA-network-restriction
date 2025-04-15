@@ -9,8 +9,6 @@ on:
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
-      - main
-      - dev
       - staging
 
 concurrency:
