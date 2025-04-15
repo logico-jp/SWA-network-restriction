@@ -1,2 +1,12 @@
 {
+  "networking": {
+    "allowedIpRanges": [
+      "167.220.233.250/32"
+    ]
+  },
+  "responseOverrides": {
+    "403": {
+      "rewrite": "/custom-forbidden-page.html"
+    }
+  }  
 }
