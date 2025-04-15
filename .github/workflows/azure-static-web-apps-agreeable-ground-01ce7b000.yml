@@ -1,13 +1,21 @@
 name: Azure Static Web Apps CI/CD
 
 on:
-  push:
-    branches:
-      - main
+#   push:
+#     branches:
+#       - main
+#       - dev
+#       - staging      
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+      - dev
+      - staging
+
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   build_and_deploy_job:
@@ -45,7 +53,8 @@ jobs:
           output_location: "." # Built app content directory - optional
           github_id_token: ${{ steps.idtoken.outputs.result }}
           ###### End of Repository/Build Configurations ######
-
+          production_branch: "main"
+          
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
     runs-on: ubuntu-latest
