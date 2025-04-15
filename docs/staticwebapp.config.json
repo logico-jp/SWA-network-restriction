@@ -7,7 +7,7 @@
   "trailingSlash": "auto",
   "responseOverrides": {
     "403": {
-      "rewrite": "/custom-forbidden-page.html"
+      "rewrite": "custom-forbidden-page.html"
     }
   }
 }
