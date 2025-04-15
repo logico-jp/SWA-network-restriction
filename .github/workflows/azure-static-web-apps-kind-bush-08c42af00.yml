@@ -4,11 +4,19 @@ on:
   push:
     branches:
       - main
+      - staging
+      - dev
   pull_request:
     types: [opened, synchronize, reopened, closed]
     branches:
       - main
+      - staging
+      - dev
 
+concurrency:
+  group: ${{ github.ref }}
+  cancel-in-progress: true
+  
 jobs:
   build_and_deploy_job:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
@@ -55,4 +63,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_KIND_BUSH_08C42AF00 }}
           action: "close"
