@@ -4,11 +4,7 @@
       "58.188.211.194/32"
     ]
   },
-  "responseOverrides": {
-    "403": {
-      "rewrite": "/custom-forbidden-page.html"
-    }
-  }  
+  "trailingSlash": "auto",
   "routes": [
     {
       "route": "403",
