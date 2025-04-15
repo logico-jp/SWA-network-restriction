@@ -1,2 +1,20 @@
 {
+  "routes": [
+    {
+      "route": "403",
+      "methods": [
+        "get",
+        "head",
+        "post",
+        "put",
+        "delete",
+        "connect",
+        "options",
+        "trace",
+        "patch"
+      ],
+      "rewrite": "custom-forbidden-page.html",
+      "statusCode": 403
+    }
+  ]
 }
